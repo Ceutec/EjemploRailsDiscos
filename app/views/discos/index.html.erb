@@ -2,6 +2,8 @@
 
 <h1>Listing Discos</h1>
 
+<%= render 'ejemplo' %>
+
 <table class="centered">
   <thead>
     <tr>
@@ -35,9 +37,8 @@
 					</a>
 				</td>
         <td>
-          <%= link_to 'Destroy', disco, method: :delete, data: { confirm: 'Are you sure?' } %>
           <!-- Nuevo link -->
-          <a class="btn-floating btn-large waves-effect waves-light red">
+          <a data-method="delete" href="/discos/<%= disco.id %>" data-confirm="Seguro?" class="btn-floating btn-large waves-effect waves-light red">
             <i class="material-icons">delete</i>
           </a>
         </td>
@@ -48,4 +49,17 @@
 
 <br>
 
-<%= link_to 'New Disco', new_disco_path %>
+<a href="/discos/new" class="btn-floating btn-large waves-effect waves-light red">
+  <i class="material-icons">add</i>
+</a>
+
+
+
+
+
+
+
+
+
+
+

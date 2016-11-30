@@ -2,5 +2,14 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @disco %> |
-<%= link_to 'Back', discos_path %>
+<div class="row">
+  <div class="col s12">
+    <%= link_to 'Show', @disco, class: 'waves-effect waves-light btn', style: 'color: white' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <%= link_to 'Back', discos_path, class: 'waves-effect waves-light btn', style: 'color: white' %>
+  </div>
+</div>

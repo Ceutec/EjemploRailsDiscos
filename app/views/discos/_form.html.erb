@@ -1,4 +1,8 @@
-<%= form_for(@disco) do |f| %>
+<div class="row">
+
+
+
+<%= form_for(@disco, :html => {:class => 'col s12'}) do |f| %>
   <% if @disco.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@disco.errors.count, "error") %> prohibited this disco from being saved:</h2>
@@ -11,23 +15,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :autor %><br>
-    <%= f.text_field :autor %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :autor %>
+      <%= f.text_field :autor, class: "validate" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :titulo %>
+      <%= f.text_field :titulo, class: "validate" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :imagen %><br>
-    <%= f.text_field :imagen %>
+
+  <div class="file-field input-field">
+    <div class="btn">
+      <span>Imagen</span>
+        <%= f.file_field :imagen %>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text">
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :descripcion %><br>
-    <%= f.text_area :descripcion %>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :descripcion %>
+      <%= f.text_area :descripcion, class: 'materialize-textarea' %>
+    </div>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar", class: 'waves-effect waves-light btn' %>
   </div>
 <% end %>
+</div>
