@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Discos</h1>
+
+<table class="centered">
+  <thead>
+    <tr>
+      <th>Autor</th>
+      <th>Titulo</th>
+      <th>Imagen</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @discos.each do |disco| %>
+      <tr>
+        <td><%= disco.autor %></td>
+        <td><%= disco.titulo %></td>
+        <td><%= disco.imagen %></td>
+        <td><%= disco.descripcion %></td>
+        <td>
+          <a href="/discos/<%= disco.id %>" class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">
+              pageview
+            </i>
+          </a>
+        </td>
+        <td>
+				<a href="/discos/<%= disco.id %>/edit" class="btn-floating btn-large waves-effect waves-light red">
+						<i class="material-icons">
+							mode_edit
+						</i>
+					</a>
+				</td>
+        <td>
+          <%= link_to 'Destroy', disco, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <!-- Nuevo link -->
+          <a class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Disco', new_disco_path %>

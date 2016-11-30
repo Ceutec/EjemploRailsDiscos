@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @disco.autor %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @disco.titulo %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @disco.imagen %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @disco.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_disco_path(@disco) %> |
+<%= link_to 'Back', discos_path %>
