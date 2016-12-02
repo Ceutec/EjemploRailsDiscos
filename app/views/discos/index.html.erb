@@ -20,7 +20,9 @@
       <tr>
         <td><%= disco.autor %></td>
         <td><%= disco.titulo %></td>
-        <td><%= disco.imagen %></td>
+        <td>
+          <img src="<%= disco.imagen %>" width="300"/>
+        </td>
         <td><%= disco.descripcion %></td>
         <td>
           <a href="/discos/<%= disco.id %>" class="btn-floating btn-large waves-effect waves-light red">

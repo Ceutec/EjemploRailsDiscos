@@ -25,6 +25,7 @@ class DiscosController < ApplicationController
   # POST /discos.json
   def create
     @disco = Disco.new(disco_params)
+    @disco.imagen = params[:file]
 
     respond_to do |format|
       if @disco.save
