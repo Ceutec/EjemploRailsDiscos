@@ -25,6 +25,7 @@ class DiscosController < ApplicationController
   # POST /discos.json
   def create
     @disco = Disco.new(disco_params)
+    @disco.user_id = current_user.id
     @disco.imagen = params[:file]
 
     respond_to do |format|
@@ -70,6 +71,6 @@ class DiscosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disco_params
-      params.require(:disco).permit(:autor, :titulo, :imagen, :descripcion)
+      params.require(:disco).permit(:autor, :titulo, :imagen, :descripcion, :user_id)
     end
 end

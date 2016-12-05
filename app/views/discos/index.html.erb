@@ -7,6 +7,7 @@
 <table class="centered">
   <thead>
     <tr>
+      <th>Usuario</th>
       <th>Autor</th>
       <th>Titulo</th>
       <th>Imagen</th>
@@ -18,6 +19,11 @@
   <tbody>
     <% @discos.each do |disco| %>
       <tr>
+        <td>
+          <% if User.find_by_id(disco.user_id) %>
+            <%= disco.user.email %>
+          <% end %>
+        </td>
         <td><%= disco.autor %></td>
         <td><%= disco.titulo %></td>
         <td>
